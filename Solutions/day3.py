@@ -18,7 +18,7 @@ def part_one():
     print(tree_count)
 
 
-if __name__ == "__main__":
+def part_two():
     path = []
     f = open("../InputFiles/day3.txt", "r")
     for line in f:

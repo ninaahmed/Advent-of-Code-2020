@@ -1,7 +1,7 @@
 import re
 
 
-if __name__ == "__main__":
+def part_one():
     f = open("../InputFiles/day7.txt", "r")
 
     bags = {}

@@ -1,4 +1,4 @@
-def partone():
+def part_one():
     f = open("../InputFiles/day6.txt", "r")
     file_it = iter(f)
 
@@ -23,7 +23,7 @@ def partone():
     print(count)
 
 
-if __name__ == "__main__":
+def part_two():
     f = open("../InputFiles/day6.txt", "r")
     file_it = iter(f)
 
