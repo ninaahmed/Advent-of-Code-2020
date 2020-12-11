@@ -1,11 +1,10 @@
 import re
 
 
-def part_one():
+if __name__ == "__main__":
     f = open("../InputFiles/day7.txt", "r")
 
     bags = {}
-    bag_count = {}
     bag_queue = []
     bag_set = set()
 
@@ -16,12 +15,10 @@ def part_one():
         bag_color = match.group(1)
         con_bags = match.group(2).split(", ")
 
-        bag_c = 0
         for bag in con_bags:
             if bag == "no other bags.":
                 break
             bag_match = re.search(r'(\d+) (.*) bag(s?)(\.?)', bag)
-            bag_c += int(bag_match.group(1))
             color = bag_match.group(2)
 
             if color not in bags:
@@ -34,9 +31,6 @@ def part_one():
                 bag_queue += [bag_color]
                 bag_set.add(bag_color)
 
-        bag_count[bag_color] = bag_c
-        print(bag_c)
-
     while len(bag_queue) != 0:
         count += 1
         color = bag_queue[0]
@@ -47,19 +41,6 @@ def part_one():
                 if not bag_set.__contains__(b):
                     bag_queue += [b]
                     bag_set.add(b)
-
-    print(count)
-
-    bag_queue += ["shiny gold"]
-    count = 0
-    while len(bag_queue) != 0:
-        color = bag_queue[0]
-        bag_queue.pop(0)
-        count += bag_count[color]
-
-        if color in bags:
-            for b in bags[color]:
-                bag_queue += [b]
 
     print(count)
 
