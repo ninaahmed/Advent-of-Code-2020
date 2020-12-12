@@ -2,10 +2,8 @@ def part_one():
     x_coord = 0
     y_coord = 0
 
-    path = []
     f = open("../InputFiles/day3.txt", "r")
-    for line in f:
-        path += [line]
+    path = [line for line in f]
 
     tree_count = 0
     while y_coord < len(path):
@@ -19,10 +17,8 @@ def part_one():
 
 
 def part_two():
-    path = []
     f = open("../InputFiles/day3.txt", "r")
-    for line in f:
-        path += [line]
+    path = [line for line in f]
 
     tree_mult = 1
     directions = [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]]
